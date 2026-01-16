@@ -6,11 +6,14 @@ export function ThreeDCar() {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
+  // Smooth out the motion
+  const mouseXSpring = useSpring(x, { stiffness: 100, damping: 30 });
+  const mouseYSpring = useSpring(y, { stiffness: 100, damping: 30 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+  // Map mouse movement to subtle 2D translation (shifting)
+  // Shift amount: -30px to 30px
+  const translateX = useTransform(mouseXSpring, [-0.5, 0.5], ["-30px", "30px"]);
+  const translateY = useTransform(mouseYSpring, [-0.5, 0.5], ["-30px", "30px"]);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -18,8 +21,11 @@ export function ThreeDCar() {
     const height = rect.height;
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
+    
+    // Calculate percentage from center (-0.5 to 0.5)
     const xPct = mouseX / width - 0.5;
     const yPct = mouseY / height - 0.5;
+    
     x.set(xPct);
     y.set(yPct);
   }, [x, y]);
@@ -31,35 +37,26 @@ export function ThreeDCar() {
 
   return (
     <div 
-      className="w-full h-full absolute inset-0 z-10 flex items-center justify-center perspective-1000"
+      className="w-full h-full absolute inset-0 z-0 flex items-center justify-center overflow-hidden"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       <motion.div
         style={{
-          rotateX,
-          rotateY,
-          transformStyle: "preserve-3d",
+          x: translateX,
+          y: translateY,
+          scale: 1.1, // Slight scale up to ensure cover without white edges during shift
         }}
-        className="relative w-full max-w-5xl px-4"
+        className="relative w-full h-full"
       >
-        <motion.img
+        <img
           src={carHeroImage}
-          alt="Premium Car"
-          className="w-full h-auto object-contain drop-shadow-[0_0_50px_rgba(255,0,0,0.3)]"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          alt="Premium Car Wall"
+          className="w-full h-full object-cover grayscale-[0.2] brightness-[0.7]"
         />
         
-        {/* Glow effect that follows cursor */}
-        <motion.div
-          style={{
-            translateX: useTransform(mouseXSpring, [-0.5, 0.5], ["-20px", "20px"]),
-            translateY: useTransform(mouseYSpring, [-0.5, 0.5], ["-20px", "20px"]),
-          }}
-          className="absolute inset-0 bg-red-600/10 blur-[120px] rounded-full -z-10"
-        />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60" />
       </motion.div>
     </div>
   );

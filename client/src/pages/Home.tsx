@@ -26,7 +26,7 @@ export default function Home() {
           <div className="shooting-star top-2/3 left-1/2 animation-delay-500"></div>
         </div>
 
-        {/* 3D Car */}
+        {/* Background Image (Cover) */}
         <ThreeDCar />
 
         {/* Hero Text */}
