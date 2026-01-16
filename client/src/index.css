@@ -65,7 +65,31 @@
   }
 }
 
-/* Shooting Star Animation */
+  .shooting-star-cross-left {
+    @apply absolute w-[2px] h-[2px] bg-white rounded-full opacity-0;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    animation: cross-left 1.5s ease-out forwards;
+    z-index: 100;
+  }
+
+  .shooting-star-cross-right {
+    @apply absolute w-[2px] h-[2px] bg-white rounded-full opacity-0;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    animation: cross-right 1.5s ease-out forwards;
+    z-index: 100;
+  }
+
+  @keyframes cross-left {
+    0% { transform: translate(-20vw, -20vh) rotate(45deg); opacity: 1; width: 150px; }
+    100% { transform: translate(120vw, 120vh) rotate(45deg); opacity: 0; width: 0; }
+  }
+
+  @keyframes cross-right {
+    0% { transform: translate(120vw, -20vh) rotate(-45deg); opacity: 1; width: 150px; }
+    100% { transform: translate(-20vw, 120vh) rotate(-45deg); opacity: 0; width: 0; }
+  }
+
+  /* Shooting Star Animation */
 .shooting-star {
   position: absolute;
   top: 50%;

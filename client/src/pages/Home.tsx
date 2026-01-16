@@ -15,34 +15,46 @@ export default function Home() {
 
       {/* Hero Section */}
       <header className="relative w-full h-screen overflow-hidden flex items-center justify-center">
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900/50 via-black to-black z-0" />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 z-0 mix-blend-overlay" />
-        
-        {/* Shooting Stars */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="shooting-star top-1/4 left-1/4 animation-delay-1000"></div>
-          <div className="shooting-star top-1/3 left-3/4 animation-delay-2000"></div>
-          <div className="shooting-star top-2/3 left-1/2 animation-delay-500"></div>
+        {/* Intro Animations */}
+        <div className="absolute inset-0 z-[100] pointer-events-none overflow-hidden">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 1, 0] }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="shooting-star-cross-left"
+          />
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 1, 0] }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="shooting-star-cross-right"
+          />
         </div>
 
         {/* Background Image (Cover) */}
-        <ThreeDCar />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, delay: 1 }}
+          className="absolute inset-0"
+        >
+          <ThreeDCar />
+        </motion.div>
 
         {/* Hero Text */}
         <div className="relative z-20 text-center pointer-events-none mb-[10vh]">
           <motion.h1 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-6xl md:text-9xl font-display font-bold tracking-tighter text-white mb-4 drop-shadow-2xl"
+            transition={{ duration: 1.5, delay: 1.5 }}
+            className="text-6xl md:text-9xl font-mono font-bold tracking-tighter text-white mb-4 drop-shadow-2xl"
           >
             REVVO<span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-900">FLEET</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 1, delay: 2.2 }}
             className="text-lg md:text-xl font-mono text-gray-400 tracking-[0.3em] uppercase"
           >
             Elevate Your Drive

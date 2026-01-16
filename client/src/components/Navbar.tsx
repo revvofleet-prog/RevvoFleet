@@ -20,11 +20,17 @@ export function Navbar() {
         <div className="flex justify-between items-center h-14">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <img 
-              src={logoImage} 
-              alt="Revvofleet Logo" 
-              className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            />
+            <div className="relative">
+              <img 
+                src={logoImage} 
+                alt="Revvofleet Logo" 
+                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-110 contrast-110"
+                style={{ filter: "drop-shadow(0 0 8px rgba(255,0,0,0.3))" }}
+              />
+            </div>
+            <span className="ml-3 text-xl font-mono font-bold text-white tracking-widest group-hover:text-red-500 transition-colors duration-300 uppercase">
+              REVVO<span className="text-red-600">FLEET</span>
+            </span>
           </Link>
 
           {/* Desktop Links */}
