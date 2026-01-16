@@ -45,18 +45,17 @@ export function ThreeDCar() {
         style={{
           x: translateX,
           y: translateY,
-          scale: 1.15, // Slightly more scale to ensure overlap for movement
         }}
-        className="relative w-full h-full mt-20"
+        className="relative w-full max-w-4xl px-4 md:px-8"
       >
         <img
           src={carHeroImage}
-          alt="Premium Car Wall"
-          className="w-full h-full object-cover grayscale-[0.2] brightness-[0.7]"
+          alt="Premium Car"
+          className="w-full h-auto object-contain drop-shadow-[0_0_50px_rgba(255,0,0,0.2)]"
         />
         
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60" />
+        {/* Subtle glow behind the car */}
+        <div className="absolute inset-0 bg-red-600/5 blur-[100px] rounded-full -z-10" />
       </motion.div>
     </div>
   );
