@@ -10,10 +10,10 @@ export function ThreeDCar() {
   const mouseXSpring = useSpring(x, { stiffness: 100, damping: 30 });
   const mouseYSpring = useSpring(y, { stiffness: 100, damping: 30 });
 
-  // Map mouse movement to subtle 2D translation (shifting)
-  // Shift amount: -30px to 30px
-  const translateX = useTransform(mouseXSpring, [-0.5, 0.5], ["-30px", "30px"]);
-  const translateY = useTransform(mouseYSpring, [-0.5, 0.5], ["-30px", "30px"]);
+  // Map mouse movement to very subtle 2D translation (shifting)
+  // Reduced shift amount for "low" movement: -15px to 15px
+  const translateX = useTransform(mouseXSpring, [-0.5, 0.5], ["-15px", "15px"]);
+  const translateY = useTransform(mouseYSpring, [-0.5, 0.5], ["-15px", "15px"]);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -45,17 +45,18 @@ export function ThreeDCar() {
         style={{
           x: translateX,
           y: translateY,
+          scale: 1.1, // Oversize slightly so boundaries are always hidden during shift
         }}
-        className="relative w-full max-w-4xl px-4 md:px-8"
+        className="relative w-full h-full"
       >
         <img
           src={carHeroImage}
-          alt="Premium Car"
-          className="w-full h-auto object-contain drop-shadow-[0_0_50px_rgba(255,0,0,0.2)]"
+          alt="Premium Car Background"
+          className="w-full h-full object-cover grayscale-[0.1] brightness-[0.7]"
         />
         
-        {/* Subtle glow behind the car */}
-        <div className="absolute inset-0 bg-red-600/5 blur-[100px] rounded-full -z-10" />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50" />
       </motion.div>
     </div>
   );
