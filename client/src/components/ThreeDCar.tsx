@@ -1,107 +1,66 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Lightformer, Environment, ContactShadows } from "@react-three/drei";
-import { useRef, useState } from "react";
-import * as THREE from "three";
-
-function AbstractCar(props: any) {
-  const group = useRef<THREE.Group>(null);
-  
-  useFrame((state) => {
-    if (!group.current) return;
-    
-    // Rotate car based on mouse position
-    const t = state.clock.getElapsedTime();
-    const x = (state.mouse.x * Math.PI) / 10;
-    const y = (state.mouse.y * Math.PI) / 10;
-    
-    // Smooth rotation interpolation
-    group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, x, 0.1);
-    group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, -y, 0.1);
-  });
-
-  return (
-    <group ref={group} {...props} dispose={null}>
-      {/* Sleek abstract car body */}
-      <mesh castShadow receiveShadow position={[0, 0.5, 0]}>
-        <boxGeometry args={[2, 0.5, 4.5]} />
-        <meshStandardMaterial 
-          color="#aa0000" 
-          roughness={0.1} 
-          metalness={0.8}
-          envMapIntensity={2}
-        />
-      </mesh>
-      
-      {/* Cabin */}
-      <mesh castShadow receiveShadow position={[0, 1.0, -0.5]}>
-        <boxGeometry args={[1.8, 0.6, 2.5]} />
-        <meshStandardMaterial 
-          color="#111" 
-          roughness={0} 
-          metalness={1} 
-        />
-      </mesh>
-      
-      {/* Wheels */}
-      <mesh position={[1.1, 0.35, 1.5]} rotation={[0, 0, Math.PI / 2]}>
-        <cylinderGeometry args={[0.35, 0.35, 0.4, 32]} />
-        <meshStandardMaterial color="#111" />
-      </mesh>
-      <mesh position={[-1.1, 0.35, 1.5]} rotation={[0, 0, Math.PI / 2]}>
-        <cylinderGeometry args={[0.35, 0.35, 0.4, 32]} />
-        <meshStandardMaterial color="#111" />
-      </mesh>
-      <mesh position={[1.1, 0.35, -1.5]} rotation={[0, 0, Math.PI / 2]}>
-        <cylinderGeometry args={[0.35, 0.35, 0.4, 32]} />
-        <meshStandardMaterial color="#111" />
-      </mesh>
-      <mesh position={[-1.1, 0.35, -1.5]} rotation={[0, 0, Math.PI / 2]}>
-        <cylinderGeometry args={[0.35, 0.35, 0.4, 32]} />
-        <meshStandardMaterial color="#111" />
-      </mesh>
-      
-      {/* Headlights */}
-      <mesh position={[0.6, 0.5, 2.26]}>
-        <boxGeometry args={[0.5, 0.1, 0.1]} />
-        <meshStandardMaterial color="#ccffff" emissive="#ccffff" emissiveIntensity={5} />
-      </mesh>
-      <mesh position={[-0.6, 0.5, 2.26]}>
-        <boxGeometry args={[0.5, 0.1, 0.1]} />
-        <meshStandardMaterial color="#ccffff" emissive="#ccffff" emissiveIntensity={5} />
-      </mesh>
-      
-      {/* Taillights */}
-      <mesh position={[0, 0.6, -2.26]}>
-        <boxGeometry args={[1.8, 0.1, 0.1]} />
-        <meshStandardMaterial color="#ff0000" emissive="#ff0000" emissiveIntensity={3} />
-      </mesh>
-    </group>
-  );
-}
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useCallback } from "react";
+import carHeroImage from "@assets/car_1768588411624.png";
 
 export function ThreeDCar() {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  }, [x, y]);
+
+  const handleMouseLeave = useCallback(() => {
+    x.set(0);
+    y.set(0);
+  }, [x, y]);
+
   return (
-    <div className="w-full h-full absolute inset-0 z-10">
-      <Canvas shadows camera={{ position: [5, 2, 5], fov: 45 }}>
-        {/* Lights */}
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={100} castShadow />
-        <ambientLight intensity={0.5} />
+    <div 
+      className="w-full h-full absolute inset-0 z-10 flex items-center justify-center perspective-1000"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <motion.div
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: "preserve-3d",
+        }}
+        className="relative w-full max-w-5xl px-4"
+      >
+        <motion.img
+          src={carHeroImage}
+          alt="Premium Car"
+          className="w-full h-auto object-contain drop-shadow-[0_0_50px_rgba(255,0,0,0.3)]"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        />
         
-        {/* Environment for reflections */}
-        <Environment preset="city" />
-        
-        {/* Floating Car */}
-        <Float speed={2} rotationIntensity={0.2} floatIntensity={0.5}>
-          <AbstractCar />
-        </Float>
-        
-        {/* Floor Shadow */}
-        <ContactShadows resolution={1024} scale={20} blur={2} opacity={0.5} far={10} color="#000000" />
-        
-        {/* Dramatic background lights */}
-        <Lightformer position={[10, 0, -10]} scale={10} color="red" intensity={2} />
-        <Lightformer position={[-10, 0, -10]} scale={10} color="white" intensity={2} />
-      </Canvas>
+        {/* Glow effect that follows cursor */}
+        <motion.div
+          style={{
+            translateX: useTransform(mouseXSpring, [-0.5, 0.5], ["-20px", "20px"]),
+            translateY: useTransform(mouseYSpring, [-0.5, 0.5], ["-20px", "20px"]),
+          }}
+          className="absolute inset-0 bg-red-600/10 blur-[120px] rounded-full -z-10"
+        />
+      </motion.div>
     </div>
   );
 }

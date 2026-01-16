@@ -30,7 +30,7 @@ export default function Home() {
         <ThreeDCar />
 
         {/* Hero Text */}
-        <div className="relative z-20 text-center pointer-events-none mt-[40vh]">
+        <div className="relative z-20 text-center pointer-events-none mb-[10vh]">
           <motion.h1 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
