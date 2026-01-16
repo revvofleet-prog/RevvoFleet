@@ -82,13 +82,16 @@ export default function BookCar() {
           
           {/* Left: Car Details */}
           <div>
-            <div className="relative aspect-video mb-8 overflow-hidden rounded-lg border border-white/10 group">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
+            <div className="relative aspect-video mb-8 overflow-hidden rounded-lg border border-white/10 group bg-zinc-900">
               <img 
                 src={car.imageUrl} 
-                alt={car.make} 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                alt={`${car.make} ${car.model}`} 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 relative z-0"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&q=80";
+                }}
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none" />
               <div className="absolute bottom-6 left-6 z-20">
                 <h1 className="text-4xl font-display font-bold">{car.make} {car.model}</h1>
                 <p className="text-red-500 font-mono text-sm tracking-widest uppercase mt-2">{car.category}</p>
