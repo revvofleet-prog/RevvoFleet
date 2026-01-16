@@ -47,7 +47,7 @@ export function ThreeDCar() {
           y: translateY,
           scale: 1.1, // Oversize slightly so boundaries are always hidden during shift
         }}
-        className="relative w-full h-full"
+        className="relative w-full h-full mt-[15vh]"
       >
         <img
           src={carHeroImage}
