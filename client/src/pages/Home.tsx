@@ -37,7 +37,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.5 }}
             className="text-6xl md:text-9xl font-display font-bold tracking-tighter text-white mb-4 drop-shadow-2xl"
           >
-            REVA<span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-900">FLEET</span>
+            REVVO<span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-900">FLEET</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}

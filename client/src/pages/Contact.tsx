@@ -26,10 +26,10 @@ export default function Contact() {
                   <Mail className="text-red-600 mr-4" /> Email Us
                 </h3>
                 <p className="text-gray-400 mb-2">General Inquiries</p>
-                <a href="mailto:info@revafleet.com" className="text-xl hover:text-red-500 transition-colors">info@revafleet.com</a>
+                <a href="mailto:info@revvofleet.com" className="text-xl hover:text-red-500 transition-colors">info@revvofleet.com</a>
                 
                 <p className="text-gray-400 mt-6 mb-2">Bookings</p>
-                <a href="mailto:bookings@revafleet.com" className="text-xl hover:text-red-500 transition-colors">bookings@revafleet.com</a>
+                <a href="mailto:bookings@revvofleet.com" className="text-xl hover:text-red-500 transition-colors">bookings@revvofleet.com</a>
               </div>
 
               <div>

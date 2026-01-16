@@ -10,7 +10,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="text-3xl font-display font-bold text-white tracking-widest mb-6 block">
-              REVA<span className="text-red-600">FLEET</span>
+              REVVO<span className="text-red-600">FLEET</span>
             </Link>
             <p className="text-gray-400 font-light max-w-sm mb-8 leading-relaxed">
               Experience the pinnacle of automotive engineering. We provide an exclusive selection of the world's finest vehicles for those who demand excellence in every journey.
@@ -61,7 +61,7 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3 text-gray-400 text-sm">
                 <Mail size={18} className="text-red-500 shrink-0" />
-                <span>concierge@revafleet.com</span>
+                <span>concierge@revvofleet.com</span>
               </li>
             </ul>
           </div>
@@ -70,7 +70,7 @@ export function Footer() {
 
         <div className="border-t border-white/5 mt-16 pt-8 text-center">
           <p className="text-xs text-gray-600 font-mono uppercase tracking-widest">
-            © {new Date().getFullYear()} Revafleet Luxury Rentals. All rights reserved.
+            © {new Date().getFullYear()} Revvofleet Luxury Rentals. All rights reserved.
           </p>
         </div>
       </div>

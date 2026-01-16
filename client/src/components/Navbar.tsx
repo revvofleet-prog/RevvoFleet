@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logoImage from "@assets/logo_1768588831731.jpeg";
 
 export function Navbar() {
   const [location] = useLocation();
@@ -14,24 +15,26 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+      <div className="bg-black/80 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 shadow-2xl">
+        <div className="flex justify-between items-center h-14">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <span className="text-2xl font-display font-bold text-white tracking-widest group-hover:text-red-500 transition-colors duration-300">
-              REVA<span className="text-red-600">FLEET</span>
-            </span>
+          <Link href="/" className="flex items-center group">
+            <img 
+              src={logoImage} 
+              alt="Revvofleet Logo" 
+              className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-12">
+          <div className="hidden md:flex items-center space-x-8">
             {links.map((link) => (
               <Link 
                 key={link.href} 
                 href={link.href}
                 className={cn(
-                  "font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:text-red-500 hover:text-glow",
+                  "font-mono text-xs uppercase tracking-widest transition-all duration-300 hover:text-red-500",
                   location === link.href ? "text-red-500 font-bold" : "text-gray-400"
                 )}
               >
@@ -40,9 +43,9 @@ export function Navbar() {
             ))}
             <a 
               href="#cars" 
-              className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white font-mono text-xs uppercase tracking-widest transition-all hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] skew-x-[-12deg]"
+              className="px-5 py-2 bg-red-600 hover:bg-red-700 text-white font-mono text-[10px] uppercase tracking-[0.2em] transition-all rounded-full hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]"
             >
-              <span className="block skew-x-[12deg]">Fleet</span>
+              Fleet
             </a>
           </div>
 
@@ -51,24 +54,24 @@ export function Navbar() {
             className="md:hidden text-white hover:text-red-500 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-black/95 border-b border-white/10 p-4 flex flex-col space-y-4 animate-accordion-down">
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-black/95 border border-white/10 rounded-3xl p-4 flex flex-col space-y-2 animate-accordion-down overflow-hidden">
           {links.map((link) => (
             <Link 
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
               className={cn(
-                "block py-3 px-4 font-mono text-sm uppercase tracking-wider border-l-2 transition-all",
+                "block py-3 px-6 font-mono text-xs uppercase tracking-widest rounded-full transition-all",
                 location === link.href 
-                  ? "border-red-600 text-white bg-white/5" 
-                  : "border-transparent text-gray-400 hover:text-white hover:bg-white/5"
+                  ? "text-white bg-red-600" 
+                  : "text-gray-400 hover:text-white hover:bg-white/5"
               )}
             >
               {link.label}

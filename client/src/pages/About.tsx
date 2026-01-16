@@ -20,7 +20,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6 text-gray-300 leading-relaxed font-light text-lg">
               <p>
-                Founded in 2024, <strong className="text-white">Revafleet</strong> was born from a singular obsession: the pure joy of driving. We believe that a car is not just a mode of transport, but an extension of one's personality and a vessel for creating unforgettable memories.
+                Founded in 2024, <strong className="text-white">Revvofleet</strong> was born from a singular obsession: the pure joy of driving. We believe that a car is not just a mode of transport, but an extension of one's personality and a vessel for creating unforgettable memories.
               </p>
               <p>
                 We curate the world's most exceptional vehicles, maintaining them to showroom standards so that you can experience the thrill of the open road exactly as the engineers intended.
