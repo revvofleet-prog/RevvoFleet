@@ -42,7 +42,7 @@ export default function Home() {
         </motion.div>
 
         {/* Hero Text */}
-        <div className="relative z-20 text-center pointer-events-none mb-[10vh]">
+        <div className="relative z-20 text-center pointer-events-none mb-[20vh]">
           <motion.h1 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}

@@ -45,9 +45,9 @@ export function ThreeDCar() {
         style={{
           x: translateX,
           y: translateY,
-          scale: 1.1, // Slight scale up to ensure cover without white edges during shift
+          scale: 1.15, // Slightly more scale to ensure overlap for movement
         }}
-        className="relative w-full h-full"
+        className="relative w-full h-full mt-20"
       >
         <img
           src={carHeroImage}
