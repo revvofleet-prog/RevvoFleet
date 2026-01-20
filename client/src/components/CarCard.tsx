@@ -33,7 +33,7 @@ export function CarCard({ car, index }: CarCardProps) {
             <div className="absolute top-4 right-4 z-20 bg-black/80 backdrop-blur border border-white/10 px-4 py-2 skew-x-[-12deg]">
               <div className="skew-x-[12deg] text-center">
                 <span className="text-xs text-gray-400 block uppercase font-mono">Daily Rate</span>
-                <span className="text-xl font-bold text-white">${car.pricePerDay}</span>
+                <span className="text-xl font-bold text-white">{car.pricePerDay} Rs</span>
               </div>
             </div>
           </div>
@@ -45,17 +45,17 @@ export function CarCard({ car, index }: CarCardProps) {
             <h3 className="text-2xl font-display font-bold text-white mb-1 group-hover:text-red-500 transition-colors">
               {car.make} {car.model}
             </h3>
-            <p className="text-sm text-gray-500 font-mono mb-6">{car.year} • {car.category.toUpperCase()}</p>
+            <p className="text-sm text-gray-500 font-mono mb-6"> • {car.category.toUpperCase()}</p>
             
             <p className="text-gray-400 text-sm line-clamp-2 mb-6 h-10 leading-relaxed">
               {car.description}
             </p>
 
             {/* Specs Grid */}
-            <div className="grid grid-cols-3 gap-2 py-4 border-t border-white/5 mb-6">
+            {/* <div className="grid grid-cols-3 gap-2 py-4 border-t border-white/5 mb-6">
               <div className="flex flex-col items-center justify-center text-center">
                 <Gauge size={16} className="text-red-600 mb-1" />
-                <span className="text-[10px] text-gray-500 uppercase tracking-wider">3.2s</span>
+                <span className="text-[10px] text-gray-500 uppercase tracking-wider">Fast</span>
               </div>
               <div className="flex flex-col items-center justify-center text-center border-l border-white/5">
                 <Fuel size={16} className="text-red-600 mb-1" />
@@ -63,9 +63,9 @@ export function CarCard({ car, index }: CarCardProps) {
               </div>
               <div className="flex flex-col items-center justify-center text-center border-l border-white/5">
                 <Settings size={16} className="text-red-600 mb-1" />
-                <span className="text-[10px] text-gray-500 uppercase tracking-wider">Auto</span>
+                <span className="text-[10px] text-gray-500 uppercase tracking-wider">Auto/Manual/Elec</span>
               </div>
-            </div>
+            </div> */}
 
             <div className="flex items-center text-red-500 font-mono text-xs uppercase tracking-widest font-bold group-hover:translate-x-2 transition-transform duration-300">
               Reserve Now <ArrowRight size={14} className="ml-2" />

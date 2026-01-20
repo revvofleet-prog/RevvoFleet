@@ -1,5 +1,4 @@
-
-import { pgTable, text, serial, integer, boolean, timestamp, date } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, timestamp, date } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -7,11 +6,10 @@ export const cars = pgTable("cars", {
   id: serial("id").primaryKey(),
   make: text("make").notNull(),
   model: text("model").notNull(),
-  year: integer("year").notNull(),
   pricePerDay: integer("price_per_day").notNull(),
   imageUrl: text("image_url").notNull(),
   description: text("description").notNull(),
-  category: text("category").notNull(), // 'sports', 'luxury', 'suv'
+  category: text("category").notNull(),
 });
 
 export const bookings = pgTable("bookings", {
@@ -20,14 +18,17 @@ export const bookings = pgTable("bookings", {
   username: text("username").notNull(),
   phoneNumber: text("phone_number").notNull(),
   email: text("email").notNull(),
-  startDate: date("start_date").notNull(), // Storing as date string YYYY-MM-DD
+  pickupLocation: text("pickup_location").notNull(),   // ✅ NEW FIELD
+  startDate: date("start_date").notNull(),
   endDate: date("end_date").notNull(),
   specialRequests: text("special_requests"),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
 export const insertCarSchema = createInsertSchema(cars).omit({ id: true });
-export const insertBookingSchema = createInsertSchema(bookings).omit({ id: true, createdAt: true });
+
+export const insertBookingSchema = createInsertSchema(bookings)
+  .omit({ id: true, createdAt: true });
 
 export type Car = typeof cars.$inferSelect;
 export type InsertCar = z.infer<typeof insertCarSchema>;

@@ -47,12 +47,12 @@ export function ThreeDCar() {
           y: translateY,
           scale: 1.1, // Oversize slightly so boundaries are always hidden during shift
         }}
-        className="relative w-full h-full mt-[15vh]"
+        className="relative w-full h-full mt-[30vh] max-lg:mt-[15vh]"
       >
         <img
           src={carHeroImage}
           alt="Premium Car Background"
-          className="w-full h-full object-cover grayscale-[0.1] brightness-[0.7]"
+          className="w-full h-full object-cover max-lg::object-contain grayscale-[0.1] brightness-[0.7]"
         />
         
         {/* Dark overlay for better text readability */}

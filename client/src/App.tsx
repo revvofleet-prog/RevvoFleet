@@ -1,5 +1,6 @@
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
+import { ToastContainer } from "react-toastify";   // ✅ you already have this
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -25,7 +26,20 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
+        <ToastContainer
+          position="top-right"
+          theme="dark"
+          autoClose={3000}
+          hideProgressBar={true}
+          closeOnClick
+          pauseOnHover
+          style={{
+            background: "black",
+            color: "white",
+            borderBottom: "4px solid #dc2626", // red bar
+          }}
+        />
+
         <Router />
       </TooltipProvider>
     </QueryClientProvider>
