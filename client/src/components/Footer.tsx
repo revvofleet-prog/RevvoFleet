@@ -83,6 +83,10 @@ export function Footer() {
           <p className="text-xs text-gray-600 font-mono uppercase tracking-widest">
             © {new Date().getFullYear()} Revvofleet Luxury Rentals. All rights reserved.
           </p>
+          <br/>
+          <p className="text-xs text-gray-600 font-mono uppercase tracking-widest">
+            © Developed by Tanish Kumar
+          </p>
         </div>
       </div>
     </footer>
