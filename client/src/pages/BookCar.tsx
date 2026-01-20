@@ -214,7 +214,7 @@ export default function BookCar() {
         (error) => {
           setIsSubmitting(false);
 
-          toast.error("Failed to send email. Try again.", {
+          toast.error(error, {
             style: {
               background: "black",
               color: "white",
