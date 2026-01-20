@@ -23,7 +23,7 @@ export function Navbar() {
           <div 
   className="logo w-24 h-10 rounded-full bg-cover transition-all duration-300 hover:shadow-[0_0_12px_rgba(225,225,225,0.6)]
     hover:scale-105"
-  style={{ backgroundImage: "url('/assets/Logo.jpeg')",backgroundPosition: "40% 40%" }}
+  style={{ backgroundImage: "url('/assets/Logo2.png')",backgroundPosition: "40% 40%" }}
 ></div>
 
             {/* <span className="text-xl font-mono font-bold text-white tracking-widest group-hover:text-red-500 transition-colors duration-300 uppercase">
