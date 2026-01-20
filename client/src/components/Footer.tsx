@@ -81,7 +81,7 @@ export function Footer() {
 
         <div className="border-t border-white/5 mt-16 pt-8 text-center">
           <p className="text-xs text-gray-600 font-mono uppercase tracking-widest">
-            © {new Date().getFullYear()} Revvofleet Luxury Rentals. All rights reserved. Developed by Tanish Kumar
+            © {new Date().getFullYear()} Revvofleet Luxury Rentals. All rights reserved.
           </p>
         </div>
       </div>
