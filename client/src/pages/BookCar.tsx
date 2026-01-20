@@ -195,7 +195,7 @@ export default function BookCar() {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         emailData,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        "Lx5DU97sEEROihwB7"
       )
       .then(
         () => {
