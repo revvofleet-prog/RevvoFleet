@@ -32,7 +32,7 @@ export function CarCard({ car, index }: CarCardProps) {
             {/* Price Tag */}
             <div className="absolute top-4 right-4 z-20 bg-black/80 backdrop-blur border border-white/10 px-4 py-2 skew-x-[-12deg]">
               <div className="skew-x-[12deg] text-center">
-                <span className="text-xs text-gray-400 block uppercase font-mono">Daily Rate</span>
+                <span className="text-xs text-gray-400 block uppercase font-mono">Price per Day</span>
                 <span className="text-xl font-bold text-white">{car.pricePerDay} Rs</span>
               </div>
             </div>

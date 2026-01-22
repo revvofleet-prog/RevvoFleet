@@ -48,7 +48,7 @@ export function Navbar() {
             ))}
             <a 
               href="#cars" 
-              className="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-white font-mono text-[10px] uppercase tracking-[0.2em] transition-all rounded-full hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]"
+              className="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-black font-bold font-mono text-[10px] uppercase tracking-[0.2em] transition-all rounded-full hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]"
             >
               Fleet
             </a>

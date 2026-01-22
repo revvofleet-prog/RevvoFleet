@@ -150,13 +150,13 @@ export default function BookCar() {
   if (!car) {
     return (
       <div className="min-h-screen bg-black flex flex-col items-center justify-center text-white">
-        <h1 className="text-4xl font-display text-red-600 mb-4">
+        <h1 className="text-4xl font-display text-[#fed337]  mb-4">
           Car Not Found
         </h1>
         <Button
           onClick={() => setLocation("/")}
           variant="outline"
-          className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
+          className="border-[#fed337]  text-[#fed337]  hover:bg-[#fed337]  hover:text-white"
         >
           Return Home
         </Button>
@@ -250,7 +250,7 @@ export default function BookCar() {
                 <h1 className="text-4xl font-display font-bold">
                   {car.make} {car.model}
                 </h1>
-                <p className="text-red-500 font-mono text-sm tracking-widest uppercase mt-2">
+                <p className="text-[#fed337] font-mono text-sm tracking-widest uppercase mt-2">
                   {car.category}
                 </p>
               </div>
@@ -275,7 +275,7 @@ export default function BookCar() {
           {/* RIGHT: Booking Form */}
           <div className="bg-zinc-900/30 border border-white/10 p-8 rounded-xl backdrop-blur-sm">
             <div className="flex items-center mb-8 pb-4 border-b border-white/10">
-              <Calendar className="text-red-600 mr-3" />
+              <Calendar className="text-[#fed337]  mr-3" />
               <h2 className="text-2xl font-display font-bold">
                 Request Booking
               </h2>
@@ -297,7 +297,7 @@ export default function BookCar() {
                       <FormControl>
                         <Input
                           placeholder="John Doe"
-                          className="bg-black/50 border-white/10 focus:border-red-600 focus:ring-0 text-white placeholder:text-gray-700"
+                          className="bg-black/50 border-white/10 focus:border-[#fed337] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 outline-none aria-[invalid=true]:border-[#fed337] text-white placeholder:text-gray-700"
                           {...field}
                         />
                       </FormControl>
@@ -318,7 +318,7 @@ export default function BookCar() {
                       <FormControl>
                         <Input
                           placeholder="Delhi Airport / Connaught Place"
-                          className="bg-black/50 border-white/10 focus:border-red-600 focus:ring-0 text-white placeholder:text-gray-700"
+                          className="bg-black/50 border-white/10 focus:border-[#fed337] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 outline-none aria-[invalid=true]:border-[#fed337] text-white placeholder:text-gray-700"
                           {...field}
                         />
                       </FormControl>
@@ -340,7 +340,7 @@ export default function BookCar() {
                           <Input
                             type="email"
                             placeholder="john@example.com"
-                            className="bg-black/50 border-white/10 focus:border-red-600 focus:ring-0 text-white placeholder:text-gray-700"
+                            className="bg-black/50 border-white/10 focus:border-[#fed337] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 outline-none aria-[invalid=true]:border-[#fed337] text-white placeholder:text-gray-700"
                             {...field}
                           />
                         </FormControl>
@@ -360,7 +360,7 @@ export default function BookCar() {
                         <FormControl>
                           <Input
                             placeholder="+1 (555) 000-0000"
-                            className="bg-black/50 border-white/10 focus:border-red-600 focus:ring-0 text-white placeholder:text-gray-700"
+                            className="bg-black/50 border-white/10 focus:border-[#fed337] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 outline-none aria-[invalid=true]:border-[#fed337] text-white placeholder:text-gray-700"
                             {...field}
                           />
                         </FormControl>
@@ -382,7 +382,7 @@ export default function BookCar() {
                         <FormControl>
                           <Input
                             type="date"
-                            className="bg-black/50 border-white/10 focus:border-red-600 focus:ring-0 text-white accent-red-600 [color-scheme:dark]"
+                            className="bg-black/50 border-white/10 focus:border-[#fed337] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 outline-none aria-[invalid=true]:border-[#fed337]placeholder:text-gray-700 text-white accent-[#fed337]  [color-scheme:dark]"
                             {...field}
                           />
                         </FormControl>
@@ -402,7 +402,7 @@ export default function BookCar() {
                         <FormControl>
                           <Input
                             type="date"
-                            className="bg-black/50 border-white/10 focus:border-red-600 focus:ring-0 text-white accent-red-600 [color-scheme:dark]"
+                            className="bg-black/50 border-white/10 focus:border-[#fed337] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 outline-none aria-[invalid=true]:border-[#fed337] text-white placeholder:text-gray-700 accent-[#fed337]  [color-scheme:dark]"
                             {...field}
                           />
                         </FormControl>
@@ -423,7 +423,7 @@ export default function BookCar() {
                       <FormControl>
                         <Textarea
                           placeholder="Any specific requirements for your rental?"
-                          className="bg-black/50 border-white/10 focus:border-red-600 focus:ring-0 text-white placeholder:text-gray-700 min-h-[100px]"
+                          className="bg-black/50 border-white/10 focus:border-[#fed337] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 outline-none aria-[invalid=true]:border-[#fed337] text-white placeholder:text-gray-700 min-h-[100px]"
                           {...field}
                           value={field.value || ""}
                         />
@@ -436,7 +436,7 @@ export default function BookCar() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-14 bg-red-600 hover:bg-red-700 text-white font-mono uppercase tracking-widest text-lg font-bold rounded-none skew-x-[-6deg]"
+                  className="w-full h-14 bg-[#fed337]  hover:bg-yellow-500 text-black font-mono uppercase tracking-widest text-lg font-bold rounded-none skew-x-[-6deg]"
                 >
                   <span className="skew-x-[6deg] flex items-center justify-center">
                     {isSubmitting ? (
@@ -451,7 +451,7 @@ export default function BookCar() {
                 </Button>
 
                 {submitError && (
-                  <div className="flex items-center text-red-500 text-sm mt-2 bg-red-950/20 p-3 border border-red-900/50 rounded">
+                  <div className="flex items-center text-[#fed337]  text-sm mt-2 bg-yellow-950/20 p-3 border border-yellow-900/50 rounded">
                     <AlertCircle size={16} className="mr-2" />
                     {submitError}
                   </div>
