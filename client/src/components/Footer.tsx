@@ -1,7 +1,19 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { useLocation } from "wouter";
 
 export function Footer() {
+  const [location, setLocation] = useLocation();
+  const handleFleetClick = () => {
+    if (location === "/") {
+      // Already on home → just scroll
+      const el = document.getElementById("cars");
+      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      // Navigate first, then scroll via hash
+      setLocation("/#cars");
+    }
+  };
   return (
     <footer className="bg-zinc-950 border-t border-white/10 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,12 +44,12 @@ export function Footer() {
           <div>
             <h4 className="font-mono text-[#fed337] uppercase tracking-widest mb-6 text-sm">Navigation</h4>
             <ul className="space-y-4">
-              <Link
-                href="/#cars"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                Our Fleet
-              </Link>
+              <button
+      onClick={handleFleetClick}
+      className="text-gray-400 hover:text-white transition-colors text-sm"
+    >
+      Our Fleet
+    </button>
               {[
                 { label: "About Us", href: "/about" },
                 { label: "Contact", href: "/contact" },

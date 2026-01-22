@@ -10,28 +10,27 @@ import { Car } from "@shared/schema";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const [location] = useLocation();
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const hash = window.location.hash;
 
-    if (hash) {
-      const id = hash.replace("#", "");
-      const el = document.getElementById(id);
+    if (hash === "#cars") {
+      const el = document.getElementById("cars");
 
       if (el) {
-        // Delay ensures DOM is fully rendered
+        // Scroll first
         setTimeout(() => {
-          el.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 50);
       }
-    } else {
-      window.scrollTo(0, 0);
+
+      // 🔥 Clean URL after scrolling
+      setTimeout(() => {
+        setLocation("/", { replace: true });
+      }, 300);
     }
-  }, [location]);
+  }, []);
 
   const cars: Car[] = [
     {
