@@ -18,7 +18,7 @@ export function CarCard({ car, index }: CarCardProps) {
       className="group relative"
     >
       <Link href={`/book/${car.id}`} className="block h-full">
-        <div className="h-full bg-zinc-900 border border-white/5 overflow-hidden transition-all duration-500 group-hover:border-red-600/50 group-hover:-translate-y-2 group-hover:shadow-[0_10px_40px_-10px_rgba(220,38,38,0.2)]">
+        <div className="h-full bg-zinc-900 border border-white/5 overflow-hidden transition-all duration-500 group-hover:border-yellow-600/50 group-hover:-translate-y-2 group-hover:shadow-[0_10px_40px_-10px_rgba(254,211,55,0.2)]">
           
           {/* Image Container */}
           <div className="relative aspect-[16/9] overflow-hidden">
@@ -40,9 +40,9 @@ export function CarCard({ car, index }: CarCardProps) {
 
           {/* Content */}
           <div className="p-6 relative">
-            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-red-600/10 to-transparent -translate-y-1/2 translate-x-1/2 rounded-full blur-xl group-hover:bg-red-600/20 transition-all" />
+            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-yellow-600/10 to-transparent -translate-y-1/2 translate-x-1/2 rounded-full blur-xl group-hover:bg-yellow-600/20 transition-all" />
 
-            <h3 className="text-2xl font-display font-bold text-white mb-1 group-hover:text-red-500 transition-colors">
+            <h3 className="text-2xl font-display font-bold text-white mb-1 group-hover:text-[#fed337] transition-colors">
               {car.make} {car.model}
             </h3>
             <p className="text-sm text-gray-500 font-mono mb-6"> • {car.category.toUpperCase()}</p>
@@ -67,7 +67,7 @@ export function CarCard({ car, index }: CarCardProps) {
               </div>
             </div> */}
 
-            <div className="flex items-center text-red-500 font-mono text-xs uppercase tracking-widest font-bold group-hover:translate-x-2 transition-transform duration-300">
+            <div className="flex items-center text-[#fed337] font-mono text-xs uppercase tracking-widest font-bold group-hover:translate-x-2 transition-transform duration-300">
               Reserve Now <ArrowRight size={14} className="ml-2" />
             </div>
           </div>

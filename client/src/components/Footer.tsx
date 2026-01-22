@@ -10,7 +10,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="text-3xl font-display font-bold text-white tracking-widest mb-6 block">
-              REVVO<span className="text-red-600">FLEET</span>
+              REVVO<span className="text-[#fed337]">FLEET</span>
             </Link>
             <p className="text-gray-400 font-light max-w-sm mb-8 leading-relaxed">
               Experience the pinnacle of automotive engineering. We provide an exclusive selection of the world's finest vehicles for those who demand excellence in every journey.
@@ -20,7 +20,7 @@ export function Footer() {
                 <a
                   key={i}
                   href="#"
-                  className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-300"
+                  className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:bg-[#fed337] hover:text-white hover:border-[#fed337] transition-all duration-300"
                 >
                   <Icon size={18} />
                 </a>
@@ -30,7 +30,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-mono text-red-500 uppercase tracking-widest mb-6 text-sm">Navigation</h4>
+            <h4 className="font-mono text-[#fed337] uppercase tracking-widest mb-6 text-sm">Navigation</h4>
             <ul className="space-y-4">
               <button
                 onClick={() => {
@@ -59,19 +59,19 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-mono text-red-500 uppercase tracking-widest mb-6 text-sm">Contact Us</h4>
+            <h4 className="font-mono text-[#fed337] uppercase tracking-widest mb-6 text-sm">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-gray-400 text-sm">
-                <MapPin size={18} className="text-red-500 shrink-0 mt-1" />
+                <MapPin size={18} className="text-[#fed337] shrink-0 mt-1" />
                 <span>Plot no. 36A, M- Block, Gali no. 16, Defence Enclave, Tajpur Khurd, New Delhi- 110071
                   Near Yashobhoomi Convention Centre,UER II, Dwarka Expressway,</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-400 text-sm">
-                <Phone size={18} className="text-red-500 shrink-0" />
+                <Phone size={18} className="text-[#fed337] shrink-0" />
                 <span>91+ 9136060001</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-400 text-sm">
-                <Mail size={18} className="text-red-500 shrink-0" />
+                <Mail size={18} className="text-[#fed337] shrink-0" />
                 <span>bookings@revvofleet.com</span>
               </li>
             </ul>

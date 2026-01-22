@@ -1,21 +1,18 @@
 import { motion } from "framer-motion";
 import { 
-  SiFerrari, SiLamborghini, SiMercedes, SiPorsche, 
-  SiTesla, SiBmw, SiAudi, SiAstonmartin, 
-  SiBentley, SiMaserati 
+  SiBmw, SiMercedes, SiHonda, SiToyota, SiLandrover, SiSuzuki
 } from "react-icons/si";
+import mahindraLogo from "@assets/b2ed7793-b31d-4ff8-bcf1-4c35777ea1d2-removebg-preview_1769103790003.png";
+import suzukiLogo from "@assets/image_1769103512367.png";
 
 const logos = [
-  { icon: SiFerrari, name: "Ferrari" },
-  { icon: SiLamborghini, name: "Lamborghini" },
-  { icon: SiMercedes, name: "Mercedes" },
-  { icon: SiPorsche, name: "Porsche" },
-  { icon: SiTesla, name: "Tesla" },
   { icon: SiBmw, name: "BMW" },
-  { icon: SiAudi, name: "Audi" },
-  { icon: SiAstonmartin, name: "Aston Martin" },
-  { icon: SiBentley, name: "Bentley" },
-  { icon: SiMaserati, name: "Maserati" },
+  { icon: SiMercedes, name: "Mercedes" },
+  { icon: SiHonda, name: "Honda" },
+  { icon: SiToyota, name: "Toyota" },
+  { icon: SiLandrover, name: "Land Rover" },
+  { image: mahindraLogo, name: "Mahindra" },
+  { image: suzukiLogo, name: "Maruti Suzuki" },
 ];
 
 export function LogoCarousel() {
@@ -25,7 +22,7 @@ export function LogoCarousel() {
       <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
       
       <motion.div 
-        className="flex whitespace-nowrap"
+        className="flex whitespace-nowrap items-center"
         animate={{ x: [0, -1000] }}
         transition={{ 
           duration: 20, 
@@ -36,9 +33,17 @@ export function LogoCarousel() {
         {[...logos, ...logos].map((logo, index) => (
           <div 
             key={index} 
-            className="flex items-center justify-center mx-12 text-white/30 hover:text-red-600 transition-colors duration-300 group"
+            className="flex items-center justify-center mx-12 text-white/30 hover:text-[#fed337] transition-colors duration-300 group"
           >
-            <logo.icon className="w-12 h-12" />
+            {logo.icon ? (
+              <logo.icon className="w-12 h-12" />
+            ) : (
+              <img 
+                src={logo.image} 
+                alt={logo.name} 
+                className="h-12 w-auto grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" 
+              />
+            )}
             <span className="ml-3 font-mono text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
               {logo.name}
             </span>

@@ -10,8 +10,8 @@ export function Navbar() {
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
+    { href: "/about", label: "About Us" },
+    { href: "/contact", label: "Contact Us" },
   ];
 
   return (
@@ -23,7 +23,7 @@ export function Navbar() {
           <div 
   className="logo w-24 h-10 rounded-full bg-cover transition-all duration-300 hover:shadow-[0_0_12px_rgba(225,225,225,0.6)]
     hover:scale-105"
-  style={{ backgroundImage: "url('/assets/Logo.jpeg')",backgroundPosition: "40% 40%" }}
+  style={{ backgroundImage: "url('/assets/Reevo.jpg')",backgroundPosition: "40% 50%" }}
 ></div>
 
             {/* <span className="text-xl font-mono font-bold text-white tracking-widest group-hover:text-red-500 transition-colors duration-300 uppercase">
@@ -39,8 +39,8 @@ export function Navbar() {
                 key={link.href} 
                 href={link.href}
                 className={cn(
-                  "font-mono text-xs uppercase tracking-widest transition-all duration-300 hover:text-red-500",
-                  location === link.href ? "text-red-500 font-bold" : "text-gray-400"
+                  "font-mono text-xs uppercase tracking-widest transition-all duration-300 hover:text-yellow-500",
+                  location === link.href ? "text-yellow-500 font-bold" : "text-gray-400"
                 )}
               >
                 {link.label}
@@ -48,7 +48,7 @@ export function Navbar() {
             ))}
             <a 
               href="#cars" 
-              className="px-5 py-2 bg-red-600 hover:bg-red-700 text-white font-mono text-[10px] uppercase tracking-[0.2em] transition-all rounded-full hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]"
+              className="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-white font-mono text-[10px] uppercase tracking-[0.2em] transition-all rounded-full hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]"
             >
               Fleet
             </a>
@@ -56,7 +56,7 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-white hover:text-red-500 transition-colors"
+            className="md:hidden text-white hover:text-yellow-500 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -75,7 +75,7 @@ export function Navbar() {
               className={cn(
                 "block py-3 px-6 font-mono text-xs uppercase tracking-widest rounded-full transition-all",
                 location === link.href 
-                  ? "text-white bg-red-600" 
+                  ? "text-white bg-[#fed337]" 
                   : "text-gray-400 hover:text-white hover:bg-white/5"
               )}
             >

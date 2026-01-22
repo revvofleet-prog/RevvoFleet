@@ -102,7 +102,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-red-600 selection:text-white">
+    <div className="min-h-screen bg-black text-white selection:bg-yellow-500 selection:text-white">
       <Navbar />
 
       {/* Hero Section */}
@@ -141,7 +141,7 @@ export default function Home() {
             transition={{ duration: 1.5, delay: 1.5 }}
             className="text-6xl md:text-9xl font-mono font-bold tracking-tighter text-white mb-4 drop-shadow-2xl"
           >
-            REVVO<span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-900">FLEET</span>
+            REVVO<span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-700">FLEET</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -160,7 +160,7 @@ export default function Home() {
           transition={{ delay: 2, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20"
         >
-          <div className="w-[1px] h-20 bg-gradient-to-b from-red-600 to-transparent mx-auto"></div>
+          <div className="w-[1px] h-20 bg-gradient-to-b from-yellow-600 to-transparent mx-auto"></div>
           <p className="text-[10px] text-gray-500 font-mono uppercase tracking-widest mt-2">Scroll</p>
         </motion.div>
       </header>
@@ -170,13 +170,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/10 pb-8">
             <div>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">Our <span className="text-red-600">Collection</span></h2>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">Our <span className="text-[#fed337]">Collection</span></h2>
               <p className="text-gray-400 font-mono text-sm max-w-md">
                 Handpicked engineering marvels ready for your command.
               </p>
             </div>
             <div className="hidden md:block">
-              <span className="font-mono text-red-600 text-xs uppercase tracking-widest border border-red-600/30 px-4 py-2 bg-red-600/5">
+              <span className="font-mono text-[#fed337] text-xs uppercase tracking-widest border border-yellow-600/30 px-4 py-2 bg-yellow-600/5">
                 {cars?.length || 0} Vehicles Available
               </span>
             </div>
@@ -200,7 +200,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-8">
-              Why <span className="text-red-600">Revvofleet</span>?
+              Why <span className="text-[#fed337]">Revvofleet</span>?
             </h2>
             <div className="space-y-8">
               {[
@@ -209,7 +209,7 @@ export default function Home() {
                 { title: "Doorstep Delivery", desc: "We bring the experience directly to your location." }
               ].map((item, i) => (
                 <div key={i} className="flex items-start space-x-4">
-                  <div className="w-12 h-[1px] bg-red-600 mt-6" />
+                  <div className="w-12 h-[1px] bg-[#fed337] mt-6" />
                   <div>
                     <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>

@@ -53,7 +53,7 @@ const locations = [
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-red-600 selection:text-white overflow-x-hidden font-mono">
+    <div className="min-h-screen bg-black text-white selection:bg-[#fed337] selection:text-white overflow-x-hidden font-mono">
       <Navbar />
 
       <main className="pt-24 space-y-12 font-mono">
@@ -80,7 +80,7 @@ export default function About() {
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
-                className="text-red-600 font-mono tracking-[0.2em] uppercase text-xs"
+                className="text-[#fed337] font-mono tracking-[0.2em] uppercase text-xs"
               >
                 Premier Luxury Mobility Solutions
               </motion.p>
@@ -96,12 +96,12 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
               <h2 className="text-3xl font-display font-bold mb-4 flex items-center">
-                <span className="w-10 h-[2px] bg-red-600 mr-4" />
+                <span className="w-10 h-[2px] bg-[#fed337] mr-4" />
                 Evolution of Excellence
               </h2>
               <div className="space-y-4 text-gray-400 text-base leading-relaxed">
                 <p>
-                  Incorporated in 2012 as <span className="text-white/60 font-mono italic">Rousing Mobility and Hospitality India (OPC) Private Limited (CIN U74999DL2017OPC327472)</span>, we have evolved into the premier luxury rental brand known today as <span className="text-white font-bold">Revvofleet</span>.
+                  Incorporated in 2017 as <span className="text-white/60 font-mono italic">Rousing Mobility and Hospitality India (OPC) Private Limited (CIN U74999DL2017OPC327472)</span>, we have evolved into the premier luxury rental brand known today as <span className="text-white font-bold">Revvofleet</span>.
                 </p>
                 <p>
                   Envisioned and brought to life by a team of Industry Professionals, our aim remains the same: providing world-class business auxiliary services by leveraging unparalleled expertise in luxury transport.
@@ -109,11 +109,11 @@ export default function About() {
               </div>
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="p-4 bg-zinc-900/40 border border-white/5 rounded-xl">
-                  <span className="text-4xl font-bold text-red-600 block">250+</span>
+                  <span className="text-4xl font-bold text-[#fed337] block">250+</span>
                   <span className="text-[10px] font-mono uppercase tracking-widest text-gray-500">Luxury Fleet</span>
                 </div>
                 <div className="p-4 bg-zinc-900/40 border border-white/5 rounded-xl">
-                  <span className="text-4xl font-bold text-red-600 block">1M+</span>
+                  <span className="text-4xl font-bold text-[#fed337] block">1M+</span>
                   <span className="text-[10px] font-mono uppercase tracking-widest text-gray-500">Global Travelers</span>
                 </div>
               </div>
@@ -138,25 +138,25 @@ export default function About() {
             <motion.h2 {...fadeInUp} className="text-3xl font-display font-bold mb-8 text-center">Core Philosophy</motion.h2>
             <Accordion type="single" collapsible className="w-full space-y-3">
               <AccordionItem value="quality" className="border border-white/10 bg-black/40 px-4 rounded-xl">
-                <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-red-600 transition-colors">
+                <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-[#fed337] transition-colors">
                   Quality Policy
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-400 text-sm leading-relaxed pb-4 space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="flex gap-4">
-                      <Users className="w-5 h-5 text-red-600 shrink-0" />
+                      <Users className="w-5 h-5 text-[#fed337] shrink-0" />
                       <p>Through the commitment of our people, we aim to anticipate, meet and exceed customer expectations the first time, every time.</p>
                     </div>
                     <div className="flex gap-4">
-                      <Heart className="w-5 h-5 text-red-600 shrink-0" />
+                      <Heart className="w-5 h-5 text-[#fed337] shrink-0" />
                       <p>To nurture an environment conducive to the well-being of our employees and partners in business.</p>
                     </div>
                     <div className="flex gap-4">
-                      <CheckCircle2 className="w-5 h-5 text-red-600 shrink-0" />
+                      <CheckCircle2 className="w-5 h-5 text-[#fed337] shrink-0" />
                       <p>To maintain and manage quality systems to ensure consistent, world-class luxury service.</p>
                     </div>
                     <div className="flex gap-4">
-                      <Building2 className="w-5 h-5 text-red-600 shrink-0" />
+                      <Building2 className="w-5 h-5 text-[#fed337] shrink-0" />
                       <p>To provide consistent ground transport solutions to enhance performance and productivity.</p>
                     </div>
                   </div>
@@ -164,31 +164,76 @@ export default function About() {
               </AccordionItem>
 
               <AccordionItem value="strengths" className="border border-white/10 bg-black/40 px-4 rounded-xl">
-                <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-red-600 transition-colors">
+                <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-[#fed337] transition-colors">
                   Revvofleet Strengths
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-400 text-sm leading-relaxed pb-4 space-y-4">
                   <div className="flex gap-4">
-                    <Zap className="w-5 h-5 text-red-600 shrink-0" />
+                    <Zap className="w-5 h-5 text-[#fed337] shrink-0" />
                     <p>An Integrated Travel Company with a High Emphasis On Technology.</p>
                   </div>
                   <div className="flex gap-4">
-                    <Users className="w-5 h-5 text-red-600 shrink-0" />
+                    <Users className="w-5 h-5 text-[#fed337] shrink-0" />
                     <p>Team of Seasoned Travel Professionals and Operation staff who are experienced & qualified.</p>
                   </div>
                   <div className="flex gap-4">
-                    <TrendingUp className="w-5 h-5 text-red-600 shrink-0" />
+                    <TrendingUp className="w-5 h-5 text-[#fed337] shrink-0" />
                     <p>Serviced More than Million Travelers till Date with the Objective to Provide World Class Service at an Economical Price.</p>
                   </div>
                   <div className="flex gap-4">
-                    <MapPin className="w-5 h-5 text-red-600 shrink-0" />
+                    <MapPin className="w-5 h-5 text-[#fed337] shrink-0" />
                     <p>Wide Geographical Spread for Effective Servicing across the country.</p>
                   </div>
                 </AccordionContent>
               </AccordionItem>
 
+              <AccordionItem value="safeguard" className="border border-white/10 bg-black/40 px-4 rounded-xl">
+                <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-[#fed337] transition-colors">
+                  Safeguard Policy
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-400 text-sm leading-relaxed pb-4 space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="flex gap-4">
+                      <ShieldCheck className="w-5 h-5 text-[#fed337] shrink-0" />
+                      <div>
+                        <p className="text-white  font-bold mb-1">Verified Personal Chauffeur</p>
+                        <p>Police verification and background checks conducted on all chauffeurs. Medically tested & fit for service.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <MapPin className="w-5 h-5 text-[#fed337] shrink-0" />
+                      <div>
+                        <p className="text-white font-bold mb-1">Track Your Ride</p>
+                        <p>Real-time ride details can be shared with family and friends for enhanced safety.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <Zap className="w-5 h-5 text-[#fed337] shrink-0" />
+                      <div>
+                        <p className="text-white font-bold mb-1">Emergency Alert Button</p>
+                        <p>SOS button can be used to alert emergency contacts or nearest PCR immediately.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <Users className="w-5 h-5 text-[#fed337] shrink-0" />
+                      <div>
+                        <p className="text-white font-bold mb-1">Chauffeur Training</p>
+                        <p>Rigorous mandatory training and grooming modules certified by IRTE.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <ShieldCheck className="w-5 h-5 text-[#fed337] shrink-0" />
+                      <div>
+                        <p className="text-white font-bold mb-1">Number Privacy</p>
+                        <p>Customer mobile number is masked at driver's end to ensure complete privacy.</p>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
               <AccordionItem value="mission" className="border border-white/10 bg-black/40 px-4 rounded-xl">
-                <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-red-600 transition-colors">
+                <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-[#fed337] transition-colors">
                   Our Vision & Mission
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-400 text-sm leading-relaxed pb-4 space-y-3">
@@ -213,7 +258,7 @@ export default function About() {
             >
               {[...clients, ...clients].map((client, idx) => (
                 <div key={idx} className="flex items-center px-10 gap-3 grayscale hover:grayscale-0 transition-all duration-300">
-                  <Handshake className="w-5 h-5 text-red-600" />
+                  <Handshake className="w-5 h-5 text-[#fed337]" />
                   <span className="text-sm font-mono tracking-widest text-gray-400 hover:text-white uppercase transition-colors">{client}</span>
                 </div>
               ))}
@@ -223,7 +268,7 @@ export default function About() {
 
         {/* Rental Types - New Section */}
         <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <motion.h2 {...fadeInUp} className="text-3xl font-display font-bold mb-12 text-center">Rental <span className="text-red-600">Types</span></motion.h2>
+          <motion.h2 {...fadeInUp} className="text-3xl font-display font-bold mb-12 text-center">Rental <span className="text-[#fed337]">Types</span></motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { 
@@ -260,9 +305,9 @@ export default function About() {
               <motion.div 
                 key={idx}
                 variants={fadeInUp}
-                className="p-8 bg-zinc-900/30 border border-white/10 rounded-2xl hover:border-red-600/50 transition-all duration-300 group hover:-translate-y-2"
+                className="p-8 bg-zinc-900/30 border border-white/10 rounded-2xl hover:border-[#fed337]/50 transition-all duration-300 group hover:-translate-y-2"
               >
-                <type.icon className="w-10 h-10 text-red-600 mb-6 group-hover:scale-110 transition-transform" />
+                <type.icon className="w-10 h-10 text-[#fed337] mb-6 group-hover:scale-110 transition-transform" />
                 <h3 className="text-xl font-display font-bold mb-4">{type.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{type.desc}</p>
               </motion.div>
@@ -309,7 +354,7 @@ export default function About() {
             >
               {[...locations, ...locations].map((location, idx) => (
                 <div key={idx} className="flex items-center px-12 gap-3 group">
-                  <MapPin className="w-5 h-5 text-red-600 group-hover:scale-125 transition-transform" />
+                  <MapPin className="w-5 h-5 text-[#fed337] group-hover:scale-125 transition-transform" />
                   <span className="text-lg font-display tracking-widest text-gray-400 group-hover:text-white transition-colors">{location}</span>
                 </div>
               ))}
@@ -323,22 +368,22 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative p-12 rounded-3xl overflow-hidden border border-red-600/20 bg-gradient-to-br from-zinc-900/50 to-black text-center"
+            className="relative p-12 rounded-3xl overflow-hidden border border-[#fed337]/20 bg-gradient-to-br from-zinc-900/50 to-black text-center"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#fed337]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="relative z-10">
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 4, repeat: Infinity }}
                 className="inline-block mb-6"
               >
-                <Zap className="w-12 h-12 text-red-600 mx-auto" />
+                <Zap className="w-12 h-12 text-[#fed337] mx-auto" />
               </motion.div>
               <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 italic tracking-tight">
-                Beyond Borders: <span className="text-red-600">2026</span>
+                Beyond Borders: <span className="text-[#fed337]">2026</span>
               </h2>
               <p className="text-xl md:text-2xl text-gray-400 font-light max-w-3xl mx-auto leading-relaxed">
-                Revvofleet is proud to announce our global expansion. From <span className="text-white font-bold">2026</span>, our premier luxury mobility solutions are now <span className="text-red-600 font-bold uppercase tracking-widest">Internationally Available</span>.
+                Revvofleet is proud to announce our global expansion. From <span className="text-white font-bold">2026</span>, our premier luxury mobility solutions are now <span className="text-[#fed337] font-bold uppercase tracking-widest">Internationally Available</span>.
               </p>
             </div>
           </motion.div>
@@ -399,7 +444,7 @@ export default function About() {
 
 // export default function About() {
 //   return (
-//     <div className="min-h-screen bg-black text-white selection:bg-red-600 selection:text-white overflow-x-hidden">
+//     <div className="min-h-screen bg-black text-white selection:bg-[#fed337] selection:text-white overflow-x-hidden">
 //       <Navbar />
 
 //       <main className="pt-24 space-y-12">
@@ -426,7 +471,7 @@ export default function About() {
 //                 initial={{ y: 10, opacity: 0 }}
 //                 animate={{ y: 0, opacity: 1 }}
 //                 transition={{ delay: 0.3 }}
-//                 className="text-red-600 font-mono tracking-[0.2em] uppercase text-xs"
+//                 className="text-[#fed337] font-mono tracking-[0.2em] uppercase text-xs"
 //               >
 //                 Premier Luxury Mobility Solutions
 //               </motion.p>
@@ -442,7 +487,7 @@ export default function About() {
 //           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 //             <motion.div {...fadeInUp}>
 //               <h2 className="text-3xl font-display font-bold mb-4 flex items-center">
-//                 <span className="w-10 h-[2px] bg-red-600 mr-4" />
+//                 <span className="w-10 h-[2px] bg-[#fed337] mr-4" />
 //                 Evolution of Excellence
 //               </h2>
 //               <div className="space-y-4 text-gray-400 text-base leading-relaxed">
@@ -455,11 +500,11 @@ export default function About() {
 //               </div>
 //               <div className="grid grid-cols-2 gap-4 mt-8">
 //                 <div className="p-4 bg-zinc-900/40 border border-white/5 rounded-xl">
-//                   <span className="text-4xl font-bold text-red-600 block">250+</span>
+//                   <span className="text-4xl font-bold text-[#fed337] block">250+</span>
 //                   <span className="text-[10px] font-mono uppercase tracking-widest text-gray-500">Luxury Fleet</span>
 //                 </div>
 //                 <div className="p-4 bg-zinc-900/40 border border-white/5 rounded-xl">
-//                   <span className="text-4xl font-bold text-red-600 block">1M+</span>
+//                   <span className="text-4xl font-bold text-[#fed337] block">1M+</span>
 //                   <span className="text-[10px] font-mono uppercase tracking-widest text-gray-500">Global Travelers</span>
 //                 </div>
 //               </div>
@@ -484,25 +529,25 @@ export default function About() {
 //             <motion.h2 {...fadeInUp} className="text-3xl font-display font-bold mb-8 text-center">Core Philosophy</motion.h2>
 //             <Accordion type="single" collapsible className="w-full space-y-3">
 //               <AccordionItem value="quality" className="border border-white/10 bg-black/40 px-4 rounded-xl">
-//                 <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-red-600 transition-colors">
+//                 <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-[#fed337] transition-colors">
 //                   Quality Policy
 //                 </AccordionTrigger>
 //                 <AccordionContent className="text-gray-400 text-sm leading-relaxed pb-4 space-y-6">
 //                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 //                     <div className="flex gap-4">
-//                       <Users className="w-5 h-5 text-red-600 shrink-0" />
+//                       <Users className="w-5 h-5 text-[#fed337] shrink-0" />
 //                       <p>Through the commitment of our people, we aim to anticipate, meet and exceed customer expectations the first time, every time.</p>
 //                     </div>
 //                     <div className="flex gap-4">
-//                       <Heart className="w-5 h-5 text-red-600 shrink-0" />
+//                       <Heart className="w-5 h-5 text-[#fed337] shrink-0" />
 //                       <p>To nurture an environment conducive to the well-being of our employees and partners in business.</p>
 //                     </div>
 //                     <div className="flex gap-4">
-//                       <CheckCircle2 className="w-5 h-5 text-red-600 shrink-0" />
+//                       <CheckCircle2 className="w-5 h-5 text-[#fed337] shrink-0" />
 //                       <p>To maintain and manage quality systems to ensure consistent, world-class luxury service.</p>
 //                     </div>
 //                     <div className="flex gap-4">
-//                       <Building2 className="w-5 h-5 text-red-600 shrink-0" />
+//                       <Building2 className="w-5 h-5 text-[#fed337] shrink-0" />
 //                       <p>To provide consistent ground transport solutions to enhance performance and productivity.</p>
 //                     </div>
 //                   </div>
@@ -510,7 +555,7 @@ export default function About() {
 //               </AccordionItem>
 
 //               <AccordionItem value="rousing" className="border border-white/10 bg-black/40 px-4 rounded-xl">
-//                 <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-red-600 transition-colors">
+//                 <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-[#fed337] transition-colors">
 //                   Rousing Hospitality Concept
 //                 </AccordionTrigger>
 //                 <AccordionContent className="text-gray-400 text-sm leading-relaxed pb-4 space-y-3">
@@ -520,7 +565,7 @@ export default function About() {
 //               </AccordionItem>
 
 //               <AccordionItem value="mission" className="border border-white/10 bg-black/40 px-4 rounded-xl">
-//                 <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-red-600 transition-colors">
+//                 <AccordionTrigger className="text-lg font-display py-4 hover:no-underline hover:text-[#fed337] transition-colors">
 //                   Our Vision & Mission
 //                 </AccordionTrigger>
 //                 <AccordionContent className="text-gray-400 text-sm leading-relaxed pb-4 space-y-3">
@@ -545,7 +590,7 @@ export default function About() {
 //             >
 //               {[...clients, ...clients].map((client, idx) => (
 //                 <div key={idx} className="flex items-center px-10 gap-3 grayscale hover:grayscale-0 transition-all duration-300">
-//                   <Handshake className="w-5 h-5 text-red-600" />
+//                   <Handshake className="w-5 h-5 text-[#fed337]" />
 //                   <span className="text-sm font-mono tracking-widest text-gray-400 hover:text-white uppercase transition-colors">{client}</span>
 //                 </div>
 //               ))}
