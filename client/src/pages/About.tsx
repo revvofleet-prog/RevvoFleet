@@ -2,12 +2,13 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LogoCarousel } from "@/components/LogoCarousel";
-import { 
-  ShieldCheck, 
-  Clock, 
-  MapPin, 
-  Users, 
-  Award, 
+import { useEffect } from "react";
+import {
+  ShieldCheck,
+  Clock,
+  MapPin,
+  Users,
+  Award,
   Zap,
   CheckCircle2,
   Building2,
@@ -38,20 +39,24 @@ const staggerContainer = {
 };
 
 const clients = [
-  "BLUE STAR LIMITED", "C & A SOURCING", "Chegg India", "DS Spiceco", 
+  "BLUE STAR LIMITED", "C & A SOURCING", "Chegg India", "DS Spiceco",
   "Care Health Insurance", "IL & FS FINANCIAL", "ABP Network", "India Tv News",
   "Voith Hydro", "BECHTEL INDIA", "BENNETT COLEMAN", "Dharampal Satyapal Ltd",
-  "Greenpanel Industries", "INDIAN ENERGY EXCHANGE", "KELTECH ENERGIES", 
+  "Greenpanel Industries", "INDIAN ENERGY EXCHANGE", "KELTECH ENERGIES",
   "TECH MAHINDRA", "VLCC HEALTH CARE", "ZEE MEDIA", "Religare Enterprise"
 ];
 
 const locations = [
-  "Delhi", "Gurugram", "Noida", "Mumbai", "Pune", "Hyderabad", 
-  "Bangalore", "Chennai", "Kochi", "Coimbatore", "Kolkata", 
+  "Delhi", "Gurugram", "Noida", "Mumbai", "Pune", "Hyderabad",
+  "Bangalore", "Chennai", "Kochi", "Coimbatore", "Kolkata",
   "Chandigarh", "Agra", "Jaipur", "Ahmedabad", "Vadodara"
 ];
 
 export default function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white selection:bg-[#fed337] selection:text-white overflow-x-hidden font-mono">
       <Navbar />
@@ -59,7 +64,7 @@ export default function About() {
       <main className="pt-24 space-y-12 font-mono">
         {/* Hero Section - Compact */}
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
@@ -68,7 +73,7 @@ export default function About() {
             <div className="absolute inset-0 bg-[url('/assets/Car.png')] bg-cover bg-center grayscale brightness-[0.2]" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-              <motion.h1 
+              <motion.h1
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -76,7 +81,7 @@ export default function About() {
               >
                 REVVOFLEET
               </motion.h1>
-              <motion.p 
+              <motion.p
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
@@ -118,14 +123,14 @@ export default function About() {
                 </div>
               </div>
             </motion.div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 15 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="relative aspect-video rounded-2xl overflow-hidden border border-white/10"
             >
-              <img 
-                src="/assets/cars/Luxury_sedan.jpg" 
-                alt="Luxury Car" 
+              <img
+                src="/assets/cars/Luxury_sedan.jpg"
+                alt="Luxury Car"
                 className="w-full h-full object-cover grayscale brightness-75"
               />
             </motion.div>
@@ -251,7 +256,7 @@ export default function About() {
           <div className="relative">
             <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
             <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
-            <motion.div 
+            <motion.div
               className="flex whitespace-nowrap py-4"
               animate={{ x: [0, -2000] }}
               transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
@@ -271,38 +276,38 @@ export default function About() {
           <motion.h2 {...fadeInUp} className="text-3xl font-display font-bold mb-12 text-center">Rental <span className="text-[#fed337]">Types</span></motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { 
-                icon: Users, 
-                title: "Employee Pickup & Drop", 
-                desc: "Corporate employee transportation services across India in major metro cities and emerging hubs." 
+              {
+                icon: Users,
+                title: "Employee Pickup & Drop",
+                desc: "Corporate employee transportation services across India in major metro cities and emerging hubs."
               },
-              { 
-                icon: Zap, 
-                title: "Self Driven Cars", 
-                desc: "Competitive prices for young, well-maintained vehicles for a hassle-free and enjoyable driving experience." 
+              {
+                icon: Zap,
+                title: "Self Driven Cars",
+                desc: "Competitive prices for young, well-maintained vehicles for a hassle-free and enjoyable driving experience."
               },
-              { 
-                icon: MapPin, 
-                title: "Outstations", 
-                desc: "Economical and comfortable outstation packages for team building, events, or holidays." 
+              {
+                icon: MapPin,
+                title: "Outstations",
+                desc: "Economical and comfortable outstation packages for team building, events, or holidays."
               },
-              { 
-                icon: Clock, 
-                title: "Monthly & Long Term", 
-                desc: "Cost-effective solutions for senior management and departmental requirements with dedicated chauffeurs." 
+              {
+                icon: Clock,
+                title: "Monthly & Long Term",
+                desc: "Cost-effective solutions for senior management and departmental requirements with dedicated chauffeurs."
               },
-              { 
-                icon: Building2, 
-                title: "Airport Transfers", 
-                desc: "Timely pickup and drop services with high emphasis on technology and last-minute coordination." 
+              {
+                icon: Building2,
+                title: "Airport Transfers",
+                desc: "Timely pickup and drop services with high emphasis on technology and last-minute coordination."
               },
-              { 
-                icon: TrendingUp, 
-                title: "Spot Rental", 
-                desc: "On-demand luxury vehicle availability for immediate and short-term premium transport needs." 
+              {
+                icon: TrendingUp,
+                title: "Spot Rental",
+                desc: "On-demand luxury vehicle availability for immediate and short-term premium transport needs."
               }
             ].map((type, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 variants={fadeInUp}
                 className="p-8 bg-zinc-900/30 border border-white/10 rounded-2xl hover:border-[#fed337]/50 transition-all duration-300 group hover:-translate-y-2"
@@ -324,7 +329,7 @@ export default function About() {
               { img: "/assets/awards/Award2.jpeg", title: "Achievement Award", desc: "Awarded for consistent quality and service benchmarks." },
               { img: "/assets/awards/Award3.jpeg", title: "Industry Leader", desc: "Honored for transforming the landscape of luxury transport." }
             ].map((award, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 variants={fadeInUp}
                 className="group border border-white/10 bg-zinc-900/20 rounded-xl overflow-hidden"
@@ -347,7 +352,7 @@ export default function About() {
           <div className="relative">
             <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
             <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
-            <motion.div 
+            <motion.div
               className="flex whitespace-nowrap py-4"
               animate={{ x: [-2000, 0] }}
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
@@ -364,7 +369,7 @@ export default function About() {
 
         {/* International Expansion - Final Callout */}
         <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-32">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

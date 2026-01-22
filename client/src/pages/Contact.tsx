@@ -2,12 +2,17 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Contact() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
-      
+
       <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -19,7 +24,7 @@ export default function Contact() {
           </h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            
+
             <div className="space-y-12">
               <div>
                 <h3 className="text-2xl font-bold mb-6 flex items-center">
@@ -27,7 +32,7 @@ export default function Contact() {
                 </h3>
                 <p className="text-gray-400 mb-2">General Inquiries</p>
                 <a href="mailto:info@revvofleet.com" className="text-xl hover:text-[#fed337] transition-colors">info@revvofleet.com</a>
-                
+
                 <p className="text-gray-400 mt-6 mb-2">Bookings</p>
                 <a href="mailto:bookings@revvofleet.com" className="text-xl hover:text-[#fed337] transition-colors">bookings@revvofleet.com</a>
               </div>
@@ -49,7 +54,7 @@ export default function Contact() {
                 </p>
               </div>
             </div>
-            
+
           </div>
         </motion.div>
       </div>

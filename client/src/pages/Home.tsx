@@ -4,10 +4,35 @@ import { ThreeDCar } from "@/components/ThreeDCar";
 import { CarCard } from "@/components/CarCard";
 import { useCars } from "@/hooks/use-cars";
 import { Loader2 } from "lucide-react";
+import { useEffect } from "react";
+import { useLocation } from "wouter";
 import { Car } from "@shared/schema";
 import { motion } from "framer-motion";
 
 export default function Home() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    const hash = window.location.hash;
+
+    if (hash) {
+      const id = hash.replace("#", "");
+      const el = document.getElementById(id);
+
+      if (el) {
+        // Delay ensures DOM is fully rendered
+        setTimeout(() => {
+          el.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 50);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
   const cars: Car[] = [
     {
       id: 1,

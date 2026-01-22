@@ -32,17 +32,12 @@ export function Footer() {
           <div>
             <h4 className="font-mono text-[#fed337] uppercase tracking-widest mb-6 text-sm">Navigation</h4>
             <ul className="space-y-4">
-              <button
-                onClick={() => {
-                  document.getElementById("cars")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }}
+              <Link
+                href="/#cars"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
                 Our Fleet
-              </button>
+              </Link>
               {[
                 { label: "About Us", href: "/about" },
                 { label: "Contact", href: "/contact" },
@@ -83,7 +78,7 @@ export function Footer() {
           <p className="text-xs text-gray-600 font-mono uppercase tracking-widest">
             © {new Date().getFullYear()} Revvofleet Luxury Rentals. All rights reserved.
           </p>
-          <br/>
+          <br />
           <p className="text-xs text-gray-600 font-mono uppercase tracking-widest">
             © Developed by Tanish Kumar
           </p>
