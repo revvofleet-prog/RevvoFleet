@@ -5,7 +5,7 @@ import { useState } from "react";
 import logoImage from "@assets/logo_1768588831731.jpeg";
 
 export function Navbar() {
-  const [location] = useLocation();
+  const [location,setLocation] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
@@ -13,6 +13,17 @@ export function Navbar() {
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact Us" },
   ];
+
+  const handleFleetClick = () => {
+    if (location === "/") {
+      // Already on home → just scroll
+      const el = document.getElementById("cars");
+      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      // Navigate first, then scroll via hash
+      setLocation("/#cars");
+    }
+  };
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
@@ -46,12 +57,12 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a 
-              href="#cars" 
+            <div
+              onClick={handleFleetClick}
               className="px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-black font-bold font-mono text-[10px] uppercase tracking-[0.2em] transition-all rounded-full hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]"
             >
               Fleet
-            </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
