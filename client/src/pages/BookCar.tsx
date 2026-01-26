@@ -192,10 +192,10 @@ export default function BookCar() {
 
     emailjs
       .send(
-        "service_r2oks7i",
-        "template_dj1ov1k",
+        "service_uipkjw7",
+        "template_a8ogquv",
         emailData,
-        "Lx5DU97sEEROihwB7"
+        "TWpJPxr82ARdaaFxC"
       )
       .then(
         () => {
